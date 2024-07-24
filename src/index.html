@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Slicing EasyFlight</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link href="./output.css" rel="stylesheet" />
+    </head>
+    <body class="bg-white font-poppins dark:bg-[#141414]">
+        <div class="flex">
+            <!-- --- -->
+            <div
+                class="flex h-dvh min-w-[290px] flex-col justify-between border-r-2 border-r-[#F2F2F2] p-9 transition-all duration-300 dark:border-r-[#1A1A1A]"
+            >
+                <!-- Logo -->
+                <a href="#">
+                    <div class="flex h-[45px] shrink-0">
+                        <img id="logo" src="assets/logo/Logo.svg" alt="logo" class="object-contain" />
+                    </div>
+                </a>
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-6">
+                    <a href="">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="flex size-10 items-center justify-center rounded-xl bg-[#155EFB] text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M9 3H4C3.44772 3 3 3.44772 3 4V11C3 11.5523 3.44772 12 4 12H9C9.55228 12 10 11.5523 10 11V4C10 3.44772 9.55228 3 9 3Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M20 3H15C14.4477 3 14 3.44772 14 4V7C14 7.55228 14.4477 8 15 8H20C20.5523 8 21 7.55228 21 7V4C21 3.44772 20.5523 3 20 3Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M20 12H15C14.4477 12 14 12.4477 14 13V20C14 20.5523 14.4477 21 15 21H20C20.5523 21 21 20.5523 21 20V13C21 12.4477 20.5523 12 20 12Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M9 16H4C3.44772 16 3 16.4477 3 17V20C3 20.5523 3.44772 21 4 21H9C9.55228 21 10 20.5523 10 20V17C10 16.4477 9.55228 16 9 16Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm font-medium tracking-[-0.28px] text-[#14151A] transition-all duration-300 dark:text-white">Dashboard</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Deals -->
+                    <a href="" class="group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex size-10 items-center justify-center rounded-xl bg-transparent text-[#969696] transition-all duration-300 group-hover:bg-[#F7F7F7] group-hover:dark:bg-[#1A1A1A]"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 22H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M6.36 17.4L4 17L2 13L3.1 12.45C3.37916 12.3093 3.6874 12.2361 4 12.2361C4.3126 12.2361 4.62084 12.3093 4.9 12.45L5.07 12.55C5.34916 12.6907 5.6574 12.7639 5.97 12.7639C6.2826 12.7639 6.59084 12.6907 6.87 12.55L8 12L5 6L5.9 5.55C6.23267 5.38635 6.60429 5.31838 6.97335 5.3537C7.34242 5.38902 7.6944 5.52622 7.99 5.75L12.01 8.75C12.3066 8.97572 12.6604 9.11404 13.0315 9.14938C13.4025 9.18472 13.7761 9.11567 14.11 8.95L18.3 6.89C18.8354 6.62009 19.4523 6.55948 20.03 6.72L21 7C21.2004 7.05566 21.3859 7.15527 21.543 7.29161C21.7001 7.42794 21.8248 7.59756 21.9082 7.78814C21.9915 7.97873 22.0313 8.18548 22.0247 8.39338C22.0181 8.60128 21.9652 8.80509 21.87 8.99L21.49 9.75C21.26 10.21 20.89 10.59 20.42 10.83L7.58 17.2C7.20245 17.387 6.77547 17.45 6.36 17.38V17.4Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm tracking-[-0.28px] text-[#14151A] transition-all duration-300 group-hover:font-medium dark:text-white">
+                                    Deals
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Clients -->
+                    <a href="" class="group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex size-10 items-center justify-center rounded-xl bg-transparent text-[#969696] transition-all duration-300 group-hover:bg-[#F7F7F7] group-hover:dark:bg-[#1A1A1A]"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M7 21V19C7 18.4696 7.21071 17.9609 7.58579 17.5858C7.96086 17.2107 8.46957 17 9 17H15C15.5304 17 16.0391 17.2107 16.4142 17.5858C16.7893 17.9609 17 18.4696 17 19V21"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm tracking-[-0.28px] text-[#14151A] transition-all duration-300 group-hover:font-medium dark:text-white">
+                                    Clients
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- My Site -->
+                    <a href="" class="group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex size-10 items-center justify-center rounded-xl bg-transparent text-[#969696] transition-all duration-300 group-hover:bg-[#F7F7F7] group-hover:dark:bg-[#1A1A1A]"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M14 14H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M14 18H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M14 10H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M14 6H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M18 12H20C20.5304 12 21.0391 12.2107 21.4142 12.5858C21.7893 12.9609 22 13.4696 22 14V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C21.0391 21.7893 20.5304 22 20 22H4C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V11C2 10.4696 2.21071 9.96086 2.58579 9.58579C2.96086 9.21071 3.46957 9 4 9H6"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M18 22V4C18 3.46957 17.7893 2.96086 17.4142 2.58579C17.0391 2.21071 16.5304 2 16 2H8C7.46957 2 6.96086 2.21071 6.58579 2.58579C6.21071 2.96086 6 3.46957 6 4V22"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm tracking-[-0.28px] text-[#14151A] transition-all duration-300 group-hover:font-medium dark:text-white">
+                                    My Site
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Message -->
+                    <a href="" class="group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex size-10 items-center justify-center rounded-xl bg-transparent text-[#969696] transition-all duration-300 group-hover:bg-[#F7F7F7] group-hover:dark:bg-[#1A1A1A]"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M14 9C14 9.53043 13.7893 10.0391 13.4142 10.4142C13.0391 10.7893 12.5304 11 12 11H6L2 15V4C2 2.9 2.9 2 4 2H12C12.5304 2 13.0391 2.21071 13.4142 2.58579C13.7893 2.96086 14 3.46957 14 4V9Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M18 9H20C20.5304 9 21.0391 9.21071 21.4142 9.58579C21.7893 9.96086 22 10.4696 22 11V22L18 18H12C11.4696 18 10.9609 17.7893 10.5858 17.4142C10.2107 17.0391 10 16.5304 10 16V15"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm tracking-[-0.28px] text-[#14151A] transition-all duration-300 group-hover:font-medium dark:text-white">
+                                    Message
+                                </p>
+                            </div>
+                            <span
+                                class="flex items-center justify-center rounded-lg bg-[#E5E5CB] p-[2px_8px] transition-all duration-300 dark:bg-[#4D4D24] dark:text-white"
+                                >2</span
+                            >
+                        </div>
+                    </a>
+                    <!-- Settings -->
+                    <a href="" class="group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex size-10 items-center justify-center rounded-xl bg-transparent text-[#969696] transition-all duration-300 group-hover:bg-[#F7F7F7] group-hover:dark:bg-[#1A1A1A]"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M12.22 2H11.78C11.2496 2 10.7409 2.21071 10.3658 2.58579C9.99072 2.96086 9.78 3.46957 9.78 4V4.18C9.77964 4.53073 9.68706 4.87519 9.51154 5.17884C9.33602 5.48248 9.08374 5.73464 8.78 5.91L8.35 6.16C8.04596 6.33554 7.70108 6.42795 7.35 6.42795C6.99893 6.42795 6.65404 6.33554 6.35 6.16L6.2 6.08C5.74107 5.81526 5.19584 5.74344 4.684 5.88031C4.17217 6.01717 3.73555 6.35154 3.47 6.81L3.25 7.19C2.98526 7.64893 2.91345 8.19416 3.05031 8.706C3.18717 9.21783 3.52154 9.65445 3.98 9.92L4.13 10.02C4.43228 10.1945 4.68362 10.4451 4.85905 10.7468C5.03448 11.0486 5.1279 11.391 5.13 11.74V12.25C5.1314 12.6024 5.03965 12.949 4.86405 13.2545C4.68844 13.5601 4.43521 13.8138 4.13 13.99L3.98 14.08C3.52154 14.3456 3.18717 14.7822 3.05031 15.294C2.91345 15.8058 2.98526 16.3511 3.25 16.81L3.47 17.19C3.73555 17.6485 4.17217 17.9828 4.684 18.1197C5.19584 18.2566 5.74107 18.1847 6.2 17.92L6.35 17.84C6.65404 17.6645 6.99893 17.5721 7.35 17.5721C7.70108 17.5721 8.04596 17.6645 8.35 17.84L8.78 18.09C9.08374 18.2654 9.33602 18.5175 9.51154 18.8212C9.68706 19.1248 9.77964 19.4693 9.78 19.82V20C9.78 20.5304 9.99072 21.0391 10.3658 21.4142C10.7409 21.7893 11.2496 22 11.78 22H12.22C12.7504 22 13.2591 21.7893 13.6342 21.4142C14.0093 21.0391 14.22 20.5304 14.22 20V19.82C14.2204 19.4693 14.3129 19.1248 14.4885 18.8212C14.664 18.5175 14.9163 18.2654 15.22 18.09L15.65 17.84C15.954 17.6645 16.2989 17.5721 16.65 17.5721C17.0011 17.5721 17.346 17.6645 17.65 17.84L17.8 17.92C18.2589 18.1847 18.8042 18.2566 19.316 18.1197C19.8278 17.9828 20.2645 17.6485 20.53 17.19L20.75 16.8C21.0147 16.3411 21.0866 15.7958 20.9497 15.284C20.8128 14.7722 20.4785 14.3356 20.02 14.07L19.87 13.99C19.5648 13.8138 19.3116 13.5601 19.136 13.2545C18.9604 12.949 18.8686 12.6024 18.87 12.25V11.75C18.8686 11.3976 18.9604 11.051 19.136 10.7455C19.3116 10.4399 19.5648 10.1862 19.87 10.01L20.02 9.92C20.4785 9.65445 20.8128 9.21783 20.9497 8.706C21.0866 8.19416 21.0147 7.64893 20.75 7.19L20.53 6.81C20.2645 6.35154 19.8278 6.01717 19.316 5.88031C18.8042 5.74344 18.2589 5.81526 17.8 6.08L17.65 6.16C17.346 6.33554 17.0011 6.42795 16.65 6.42795C16.2989 6.42795 15.954 6.33554 15.65 6.16L15.22 5.91C14.9163 5.73464 14.664 5.48248 14.4885 5.17884C14.3129 4.87519 14.2204 4.53073 14.22 4.18V4C14.22 3.46957 14.0093 2.96086 13.6342 2.58579C13.2591 2.21071 12.7504 2 12.22 2Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm tracking-[-0.28px] text-[#14151A] transition-all duration-300 group-hover:font-medium dark:text-white">
+                                    Settings
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="h-[2px] w-full bg-[#F2F2F2] transition-all duration-300 dark:bg-[#1A1A1A]"></div>
+                    <!-- Dark mode -->
+                    <label for="toggleBtn" class="group flex items-center justify-between">
+                        <input type="checkbox" id="toggleBtn" class="peer hidden" />
+                        <div class="flex">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="flex size-10 items-center justify-center rounded-xl bg-transparent text-[#969696] transition-all duration-300 group-hover:bg-[#F7F7F7] group-hover:dark:bg-[#1A1A1A]"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M12 3C10.8065 4.19347 10.136 5.81217 10.136 7.5C10.136 9.18783 10.8065 10.8065 12 12C13.1935 13.1935 14.8122 13.864 16.5 13.864C18.1878 13.864 19.8065 13.1935 21 12C21 13.78 20.4722 15.5201 19.4832 17.0001C18.4943 18.4802 17.0887 19.6337 15.4442 20.3149C13.7996 20.9961 11.99 21.1743 10.2442 20.8271C8.49836 20.4798 6.89472 19.6226 5.63604 18.364C4.37737 17.1053 3.5202 15.5016 3.17294 13.7558C2.82567 12.01 3.0039 10.2004 3.68509 8.55585C4.36628 6.91131 5.51983 5.50571 6.99987 4.51677C8.47991 3.52784 10.22 3 12 3Z"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-sm tracking-[-0.28px] text-[#14151A] transition-all duration-300 group-hover:font-medium dark:text-white">
+                                    Dark Mode
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex w-[50px] items-center justify-start rounded-full bg-[#EFF0F5] p-[2px] transition-all duration-300 peer-checked:justify-end dark:bg-[#242424]"
+                        >
+                            <div
+                                class="toggleCircle size-[26px] rounded-full bg-white shadow-[2px_2px_4px_0px_hsla(230,_23%,_57%,_0.2);] transition-all duration-300 dark:bg-[#141414] dark:shadow-none"
+                            ></div>
+                        </div>
+                    </label>
+                </nav>
+                <!-- Card -->
+                <div class="flex flex-col gap-4 rounded-[26px] bg-[#10062B] p-[30px] transition-all duration-300 dark:bg-white">
+                    <div class="relative h-[58px] bg-transparent">
+                        <div class="absolute -right-[31px] -top-[41px] flex h-[100px] shrink-0">
+                            <img src="assets/images/plane.svg" alt="plane" class="size-full" />
+                        </div>
+                    </div>
+                    <p class="text-center text-base leading-[26px] tracking-[-2%] text-white dark:text-[#10062B]">
+                        Updating your plan <br />
+                        for Premium!
+                    </p>
+                    <a href="#" class="rounded-xl bg-white p-[12px_32px] text-center text-xs leading-[18px] text-[#10062B] dark:bg-[#141414] dark:text-white"
+                        >Upgrade Now</a
+                    >
+                </div>
+            </div>
+
+            <div class="h-dvh w-3/4 bg-purple-300 transition-all duration-300"></div>
+
+            <div class="h-dvh w-1/4 transition-all duration-300">
+                <!-- --- -->
+                <div class="relative flex h-[45%] overflow-hidden">
+                    <div class="flex w-full justify-between p-9">
+                        <p>hi</p>
+                        <p>hi</p>
+                    </div>
+                    <div class="absolute -z-10 flex size-full shrink-0">
+                        <img src="assets/images/flying plane.jpg" alt="flying plane" class="size-full object-cover" />
+                    </div>
+                </div>
+
+                <div class="h-[55%] bg-blue-400"></div>
+            </div>
+            <!-- --- -->
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
