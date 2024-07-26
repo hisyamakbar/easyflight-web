@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Before-After Vertical Slider with Tailwind CSS</title>
+        <style>
+            /* Tambahkan Tailwind CSS */
+            @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+
+            .image-after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+            }
+
+            .slider {
+                position: absolute;
+                top: 50%;
+                left: -20px; /* Membuat slider offside */
+                width: calc(100% + 40px); /* Lebar slider lebih besar dari container */
+                height: 5px;
+                background: red; /* Warna slider merah */
+                cursor: ns-resize;
+                user-select: none; /* Mencegah seleksi */
+            }
+
+            /* Mencegah seleksi saat dragging */
+            body,
+            .container,
+            .slider {
+                user-select: none;
+            }
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="m-0 flex h-screen items-center justify-center font-sans">
+        <div class="bdoContainer relative w-4/5 max-w-xl overflow-visible rounded-[50px]">
+            <div class="image-container relative w-full">
+                <img src="assets/images/flying plane.jpg" alt="Before" class="image block w-full rounded-[50px]" />
+                <img src="assets/images/planejuga.jpg" alt="After" class="image image-after absolute block w-full rounded-[50px]" />
+                <div class="slider"></div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const slider = document.querySelector(".slider");
+                const imageAfter = document.querySelector(".image-after");
+                const container = document.querySelector(".bdoContainer");
+
+                let isDragging = false;
+
+                slider.addEventListener("mousedown", function (e) {
+                    isDragging = true;
+                    e.preventDefault(); // Mencegah seleksi
+                });
+
+                document.addEventListener("mouseup", function (e) {
+                    isDragging = false;
+                });
+
+                document.addEventListener("mousemove", function (e) {
+                    if (!isDragging) return;
+
+                    const rect = container.getBoundingClientRect();
+                    let offsetY = e.clientY - rect.top;
+
+                    if (offsetY < 0) offsetY = 0;
+                    if (offsetY > rect.height) offsetY = rect.height;
+
+                    const percentage = (offsetY / rect.height) * 100;
+                    updateSliderAndImage(percentage);
+                });
+
+                // Mencegah seleksi saat dragging
+                container.addEventListener("dragstart", function (e) {
+                    e.preventDefault();
+                });
+                document.addEventListener("selectstart", function (e) {
+                    if (isDragging) {
+                        e.preventDefault();
+                    }
+                });
+
+                // Fungsi untuk memperbarui posisi slider dan clip-path gambar
+                function updateSliderAndImage(percentage) {
+                    slider.style.top = `${percentage}%`;
+                    imageAfter.style.clipPath = `polygon(0 0, 100% 0, 100% ${percentage}%, 0% ${percentage}%)`;
+                }
+
+                // Inisialisasi posisi slider dan clip-path gambar
+                updateSliderAndImage(20);
+            });
+        </script>
+    </body>
+</html>

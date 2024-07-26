@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=\, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link href="./output.css" rel="stylesheet" />
+        <style>
+            .bgPattern {
+                background-color: #e5e5f7;
+                opacity: 0.8;
+                background: repeating-linear-gradient(-45deg, #8ac4f4, #8ac4f4 3px, #a0d3fe 3px, #a0d3fe 9px);
+            }
+
+            .image-after {
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+            }
+        </style>
+    </head>
+    <body>
+        <main class="flex h-dvh w-dvw flex-col items-center justify-center gap-5 bg-red-200">
+            <!-- card -->
+            <div class="flex h-fit items-center justify-center gap-8">
+                <!-- Time -->
+                <div class="flex flex-col">
+                    <p class="text-xs font-medium leading-[18px] tracking-[0.36px] text-[#212530] transition-all duration-300 dark:text-white">07:00</p>
+                    <p class="text-right text-xs font-medium leading-[18px] tracking-[0.36px] text-[#212530] transition-all duration-300 dark:text-white">am</p>
+                </div>
+                <!-- Card -->
+                <div class="bdoContainer relative z-10 flex h-full w-full flex-col gap-1 p-[20px_24px] dark:bg-[#014378]">
+                    <!-- image after -->
+                    <div class="absolute inset-0 -z-10 rounded-3xl bg-[#A0D3FE]"></div>
+                    <!-- image before -->
+                    <div class="bgPattern image-after absolute inset-0 -z-10 rounded-3xl"></div>
+                    <div
+                        class="slider absolute left-1/2 top-0 z-30 flex h-px w-[calc(100%+40px)] -translate-x-1/2 transform items-center justify-center bg-[#10062B] before:absolute before:-left-[12px]"
+                    >
+                        <div class="absolute left-0 size-[10px] rounded-full bg-[#10062B]"></div>
+                    </div>
+                    <p class="font-medium tracking-[0.32px] text-[#212530] transition-all duration-300 dark:text-white">BDO</p>
+                    <p class="text-xs font-semibold leading-[18px] tracking-[0.36px] text-[#212530] transition-all duration-300 dark:text-white">
+                        Registration Success Ready
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const slider = document.querySelector(".slider");
+                const imageAfter = document.querySelector(".image-after");
+                const container = document.querySelector(".bdoContainer");
+
+                let isDragging = false;
+
+                slider.addEventListener("mousedown", function (e) {
+                    isDragging = true;
+                    e.preventDefault(); // Mencegah seleksi
+                });
+
+                document.addEventListener("mouseup", function (e) {
+                    isDragging = false;
+                });
+
+                document.addEventListener("mousemove", function (e) {
+                    if (!isDragging) return;
+
+                    const rect = container.getBoundingClientRect();
+                    let offsetY = e.clientY - rect.top;
+
+                    if (offsetY < 0) offsetY = 0;
+                    if (offsetY > rect.height) offsetY = rect.height;
+
+                    const percentage = (offsetY / rect.height) * 100;
+                    updateSliderAndImage(percentage);
+                });
+
+                // Mencegah seleksi saat dragging
+                container.addEventListener("dragstart", function (e) {
+                    e.preventDefault();
+                });
+                document.addEventListener("selectstart", function (e) {
+                    if (isDragging) {
+                        e.preventDefault();
+                    }
+                });
+
+                // Fungsi untuk memperbarui posisi slider dan clip-path gambar
+                function updateSliderAndImage(percentage) {
+                    slider.style.top = `${percentage}%`;
+                    imageAfter.style.clipPath = `polygon(0 0, 100% 0, 100% ${percentage}%, 0% ${percentage}%)`;
+                }
+
+                // Inisialisasi posisi slider dan clip-path gambar
+                updateSliderAndImage(20);
+            });
+        </script>
+    </body>
+</html>
