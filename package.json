@@ -2,7 +2,7 @@
   "name": "easyflight-web",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+"type":"module",  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
@@ -14,5 +14,8 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.6"
+  },
+  "dependencies": {
+    "flowbite": "^2.4.1"
   }
 }
